@@ -3,10 +3,10 @@ import axios from "axios";
 export class ProductService {
 
     // baseUrl = "http://localhost:8080/api/products/";
-    baseUrl = "https://springmongodb-production.up.railway.app/api/products/";
+    baseUrl = "https://hg-rest-api.herokuapp.com/api/products/";
 
     create(product){
-        return axios.post(this.baseUrl+"product", product).then(res => res.data);
+        return axios.post(this.baseUrl+"product/", product).then(res => res.data);
     }
 
     readAll(){

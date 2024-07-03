@@ -2,7 +2,7 @@
   "name": "front-producto",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://springmongodb-production.up.railway.app/",
+  "homepage": "https://Nicole599.github.com/front-producto",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
