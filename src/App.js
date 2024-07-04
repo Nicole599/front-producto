@@ -1,5 +1,5 @@
 import React from 'react';
-import 'primereact/resources/themes/nova-light/theme.css';
+import 'primereact/resources/themes/luna-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import ProductContextProvider from './contexts/ProductContext';
@@ -16,3 +16,4 @@ function App() {
 }
 
 export default App;
+

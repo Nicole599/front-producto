@@ -29,13 +29,18 @@ const ProductForm = (props) => {
     if (editProduct) setProductData(editProduct);
   }, [editProduct]);
 
-  const updateField = (data, field) => {
+  const updateProductName = (e) => {
     setProductData({
       ...productData,
-      [field]: data,
+      name: e.target.value.trim(),
     });
+  };
 
-    console.log(productData);
+  const updateProductPrice = (value) => {
+    setProductData({
+      ...productData,
+      price: value,
+    });
   };
 
   const _deleteProduct = () => {
@@ -84,7 +89,7 @@ const ProductForm = (props) => {
           <div className="p-float-label">
             <InputText
               value={productData.name}
-              onChange={(e) => updateField(e.target.value.trim(), "name")}
+              onChange={updateProductName}
             />
             <label>Nombre:</label>
           </div>
@@ -92,7 +97,7 @@ const ProductForm = (props) => {
           <div className="p-float-label">
             <InputNumber
               value={productData.price}
-              onChange={(e) => updateField(e.target.value, "price")}
+              onValueChange={(e) => updateProductPrice(e.value)}
               mode="currency"
               currency="USD"
             />
@@ -106,10 +111,10 @@ const ProductForm = (props) => {
                 new Date(productData.expiry_date + " ")
               }
               onChange={(e) =>
-                updateField(
-                  e.target.value.toISOString().substring(0, 10),
-                  "expiry_date"
-                )
+                setProductData({
+                  ...productData,
+                  expiry_date: e.target.value.toISOString().substring(0, 10),
+                })
               }
               dateFormat="yy-mm-dd"
             />
