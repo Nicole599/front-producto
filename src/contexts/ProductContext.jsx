@@ -11,8 +11,8 @@ const ProductContextProvider = (props) => {
   const [editProduct, setEditProduct] = useState(null);
 
   useEffect(() => {
-    productService.readAll().then((data) => setProducts(data));
-  }, []);
+    productService.readAll().then(data => setProducts(data));
+  }, [productService, products]);
 
   const createProduct = (product) => {
     productService
